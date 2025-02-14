@@ -1,0 +1,11 @@
+/venv/
+/alembic.ini
+/database.db
+/app/.ipynb_checkpoints/
+/app/just_try.py
+/app/face_verify.py
+/app/database.db
+/app/static/index.html
+/.venv/
+/alembic/
+/.ipynb_checkpoints/

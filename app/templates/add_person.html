@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}Добавить клиента{% endblock %}
+
+{% block content %}
+    <h2>Добавить клиента</h2>
+    <form action="/persons/" method="post">
+        <label for="first_name">Имя:</label>
+        <input type="text" id="first_name" name="first_name" required>
+
+        <label for="last_name">Отчество:</label>
+        <input type="text" id="last_name" name="last_name" required>
+
+        <label for="middle_name">Фамилия:</label>
+        <input type="text" id="middle_name" name="middle_name" required>
+
+
+        <label for="birth_date">Дата рождения:</label>
+        <input type="date" id="birth_date" name="birth_date" required>
+
+        <label for="phone_number">Номер телефона:</label>
+        <input type="text" id="phone_number" name="phone_number" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="payment_date">Дата оплаты:</label>
+        <input type="date" id="payment_date" name="payment_date" required>
+
+        <label for="payment_amount">Сумма оплаты:</label>
+        <input type="number" step="0.01" id="payment_amount" name="payment_amount" required>
+
+        <button type="submit">Добавить</button>
+    </form>
+{% endblock %}

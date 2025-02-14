@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Статистика клиентов</h2>
+    <canvas id="dashboardChart"></canvas>
+
+    <!-- Подключаем Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Скрипт для загрузки данных и отображения диаграммы -->
+    <script defer>
+        async function loadData() {
+            try {
+                const response = await fetch("http://127.0.0.1:8000/api/dashboard-data");
+                const data = await response.json();
+
+                const ctx = document.getElementById('dashboardChart').getContext('2d');
+                new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Всего клиентов', 'Не заплатили', 'Общая сумма оплат (тыс. руб.)'],
+                        datasets: [{
+                            label: 'Данные',
+                            data: [data.total_clients, data.not_paid, data.total_paid_sum_thousands],
+                            backgroundColor: ['blue', 'red', 'green']
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        scales: {
+                            y: { beginAtZero: true }
+                        }
+                    }
+                });
+            } catch (error) {
+                console.error("Ошибка загрузки данных:", error);
+            }
+        }
+        window.addEventListener('DOMContentLoaded', loadData);
+    </script>
+{% endblock %}
