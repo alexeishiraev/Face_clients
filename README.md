@@ -92,14 +92,16 @@ pytest Tests/
 
 ## Установка
 1. Клонируйте репозиторий:
+```
 git clone https://github.com/ваш-пользователь/имя-репозитория.git
 cd имя-репозитория
+```
 
-2. Создайте виртуальное окружение:
+3. Создайте виртуальное окружение:
 python -m venv .venv
 source .venv/bin/activate    # Для Linux / MacOS
 .venv\Scripts\activate       # Для Windows
-3. Установите зависимости:
+4. Установите зависимости:
 pip install -r requirements.txt
 
 ## Запуск через FastApi
