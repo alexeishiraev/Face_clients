@@ -66,7 +66,7 @@ Face_detector/
 │   │   ├── photo                # Папка, где хранятся фото из базы данных 
 │   │   ├── haarcascade_frontalface_alt.xml   # Данные для использования каскадов Хаара для распознавания лиц
 └── requirements.txt        # Зависимости проекта
----
+```
 
 ## API эндпоинты
 - GET/add_person форма (для HTML)
